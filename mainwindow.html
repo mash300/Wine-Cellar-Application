@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Wine Cellar Application</title>
+    <link rel="stylesheet" href="http:bootswatch.com/cerulean/bootstrap.min.css">
+    <style>
+
+      body{
+        background-image: url(images/addPasta.jpg);
+        background-size: cover;
+        color: rgb(255, 255, 255);
+      }
+ 
+      ul li{
+        list-style-type:none;
+      }
+   
+    </style>
+  </head>
+  <body>
+    <h1>Wine Cellar Application</h1>
+    <p>Double click to delete a single item:</p>
+    <div id="pastaCollection"></div>
+
+    <script>
+      const electron = require('electron');
+      const {ipcRenderer} = electron;
+      const $ = require('jquery');
+
+      const wineDiv = document.getElementById('pastaCollection');
+    
+      //catch add item
+      ipcRenderer.on('item:add', function(
+        e,item,category,wineType,year,winery,purchased,wineRating)
+        {
+        var allInput=["name: "+item, "Category : "+category, "Type : "+wineType, "Year : "+year, "Winery : "+winery, "Year Purchased : "+purchased, "Wine Rating :"+wineRating];
+
+        var ul,li, itemText;
+        ul = document.createElement('ul');
+        ul.setAttribute("class","eachWine");
+        
+        for (var i=0; i<allInput.length;i++)
+        {          
+          li = document.createElement('li');
+          itemText = document.createTextNode(allInput[i]);
+          li.appendChild(itemText);
+          ul.appendChild(li);
+        }
+
+        wineDiv.append(ul);
+        
+        var wines= document.getElementsByClassName('eachWine');
+        var a = wines[wines.length-1];
+          a.addEventListener('dblclick',function(){
+            a.remove();
+          })
+      
+      });
+
+      //item clear
+      ipcRenderer.on('item:clear', function(){
+        wineDiv.innerHTML = '';
+      });
+
+      
+    </script>
+
+  </body>
+</html>

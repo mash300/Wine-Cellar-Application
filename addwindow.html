@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Wine</title>
+    <link rel="stylesheet" href="http:bootswatch.com/cerulean/bootstrap.min.css">
+    <style>
+      
+    </style>
+  </head>
+  <body>
+    <form>
+      <div>
+        <table>
+          <!-- This is the Name imput field in the ADD Wine window -->
+          <tr>
+            <td><label>Name:</label></td>
+            <td><input type="text" id="name" autofocus placeholder="Enter Name"></td>
+          </tr>
+          <!-- This is the Category drop-down menu in the ADD Wine window -->
+          <tr>
+            <td><label for="category">Category:</label></td>
+            <td>
+              <select id="category" name="category" onchange="showType(this.id,'type')">
+                <option value="">Choose option</option>
+                <option value="Red">Red</option>
+                <option value="White">White</option>
+                <option value="Dessert">Dessert</option>
+              </select>
+            </td>
+          </tr>
+          <!-- This is the wineType drop-down menu in the ADD Wine window -->
+          <tr>
+            <td><label for="wineType">Type:</label></td>
+            <td>
+              <select id="wineType" name="wineType" onchange="showType(this.id,'type')">
+                <option value="">Choose option</option>
+                <option value="Cabernet">Cabernet</option>
+                <option value="Cabernet Sauvignon">Cabernet Sauvignon</option>
+                <option value="Malbec">Malbec</option>
+                <option value="Shirah / Shiraz">Shirah / Shiraz</option>
+                <option value="Pinot Noir">Pinot Noir</option>
+                <option value="Port">Port</option>
+                <option value="Other Red Varieties">Other Red Varieties</option>
+                <option value="Red Blends">Red Blends</option>
+              </select>
+            </td>
+          </tr>
+          <!-- This is the year drop-down menu in the ADD Wine window -->
+          <tr>
+            <td><label for="year">Year:</label></td>
+            <td>
+              <select id="year" name="year" onchange="showType(this.id,'type')">
+                <option value="">Choose year</option>
+                <option value="1950">1950</option>
+                <option value="1951">1951</option>
+                <option value="1952">1952</option>
+                <option value="1953">1953</option>
+                <option value="1954">1954</option>
+                <option value="1955">1955</option>
+                <option value="1956">1956</option>
+                <option value="1957">1957</option>
+                <option value="1958">1958</option>
+                <option value="1959">1959</option>
+                <option value="1950">1960</option>
+                <option value="1951">1961</option>
+                <option value="1952">1962</option>
+                <option value="1953">1963</option>
+                <option value="1954">1964</option>
+                <option value="1955">1965</option>
+                <option value="1956">1966</option>
+                <option value="1957">1967</option>
+                <option value="1958">1968</option>
+                <option value="1959">1969</option>
+                <option value="1950">1970</option>
+                <option value="1951">1971</option>
+                <option value="1952">1972</option>
+                <option value="1953">1973</option>
+                <option value="1954">1974</option>
+                <option value="1955">1975</option>
+                <option value="1956">1976</option>
+                <option value="1957">1977</option>
+                <option value="1958">1978</option>
+                <option value="1959">1979</option>
+                <option value="1950">1980</option>
+                <option value="1951">1981</option>
+                <option value="1952">1982</option>
+                <option value="1953">1983</option>
+                <option value="1954">1984</option>
+                <option value="1955">1985</option>
+                <option value="1956">1986</option>
+                <option value="1957">1987</option>
+                <option value="1958">1988</option>
+                <option value="1959">1989</option>
+                <option value="1950">1990</option>
+                <option value="1951">1991</option>
+                <option value="1952">1992</option>
+                <option value="1953">1993</option>
+                <option value="1954">1994</option>
+                <option value="1955">1995</option>
+                <option value="1956">1996</option>
+                <option value="1957">1997</option>
+                <option value="1958">1998</option>
+                <option value="1959">1999</option>
+                <option value="1950">2000</option>
+                <option value="1951">2001</option>
+                <option value="1952">2002</option>
+                <option value="1953">2003</option>
+                <option value="1954">2004</option>
+                <option value="1955">2005</option>
+                <option value="1956">2006</option>
+                <option value="1957">2007</option>
+                <option value="1958">2008</option>
+                <option value="1959">2009</option>
+                <option value="1950">2010</option>
+                <option value="1951">2011</option>
+                <option value="1952">2012</option>
+                <option value="1953">2013</option>
+                <option value="1954">2014</option>
+                <option value="1955">2015</option>
+                <option value="1956">2016</option>
+                <option value="1957">2017</option>
+                <option value="1958">2018</option>
+                <option value="1959">2019</option>
+                <option value="1958">2020</option>
+                <option value="1959">2021</option>
+              </select>
+            </td>
+          </tr>
+          <!-- This is the Winery imput field in the ADD Wine window -->
+          <tr>
+            <td><label>Winery:</label></td>
+            <td><input type="text" id="winery" autofocus placeholder="Enter Winery"></td>
+          </tr>
+          <!-- This is the year Purchaced drop-down menu in the ADD Wine window -->
+          <tr>
+            <td><label for="purchased">Year Purchased:</label></td>
+            <td>
+              <select id="purchased" name="purchased" onchange="showType(this.id,'type')">
+                <option value="">Select Year</option>
+                <option value="1950">1950</option>
+                <option value="1951">1951</option>
+                <option value="1952">1952</option>
+                <option value="1953">1953</option>
+                <option value="1954">1954</option>
+                <option value="1955">1955</option>
+                <option value="1956">1956</option>
+                <option value="1957">1957</option>
+                <option value="1958">1958</option>
+                <option value="1959">1959</option>
+                <option value="1950">1960</option>
+                <option value="1951">1961</option>
+                <option value="1952">1962</option>
+                <option value="1953">1963</option>
+                <option value="1954">1964</option>
+                <option value="1955">1965</option>
+                <option value="1956">1966</option>
+                <option value="1957">1967</option>
+                <option value="1958">1968</option>
+                <option value="1959">1969</option>
+                <option value="1950">1970</option>
+                <option value="1951">1971</option>
+                <option value="1952">1972</option>
+                <option value="1953">1973</option>
+                <option value="1954">1974</option>
+                <option value="1955">1975</option>
+                <option value="1956">1976</option>
+                <option value="1957">1977</option>
+                <option value="1958">1978</option>
+                <option value="1959">1979</option>
+                <option value="1950">1980</option>
+                <option value="1951">1981</option>
+                <option value="1952">1982</option>
+                <option value="1953">1983</option>
+                <option value="1954">1984</option>
+                <option value="1955">1985</option>
+                <option value="1956">1986</option>
+                <option value="1957">1987</option>
+                <option value="1958">1988</option>
+                <option value="1959">1989</option>
+                <option value="1950">1990</option>
+                <option value="1951">1991</option>
+                <option value="1952">1992</option>
+                <option value="1953">1993</option>
+                <option value="1954">1994</option>
+                <option value="1955">1995</option>
+                <option value="1956">1996</option>
+                <option value="1957">1997</option>
+                <option value="1958">1998</option>
+                <option value="1959">1999</option>
+                <option value="1950">2000</option>
+                <option value="1951">2001</option>
+                <option value="1952">2002</option>
+                <option value="1953">2003</option>
+                <option value="1954">2004</option>
+                <option value="1955">2005</option>
+                <option value="1956">2006</option>
+                <option value="1957">2007</option>
+                <option value="1958">2008</option>
+                <option value="1959">2009</option>
+                <option value="1950">2010</option>
+                <option value="1951">2011</option>
+                <option value="1952">2012</option>
+                <option value="1953">2013</option>
+                <option value="1954">2014</option>
+                <option value="1955">2015</option>
+                <option value="1956">2016</option>
+                <option value="1957">2017</option>
+                <option value="1958">2018</option>
+                <option value="1959">2019</option>
+                <option value="1958">2020</option>
+                <option value="1959">2021</option>
+              </select>
+            </td>
+          </tr>
+          <!-- This is the wineRating drop-down menu in the ADD Wine window -->
+          <tr>
+            <td><label for="wineRating">Rating:</label></td>
+            <td>
+              <select id="wineRating" name="wineRating" onchange="showType(this.id,'type')">
+                <option value="">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+
+              </select>
+            </td>
+          </tr>
+          
+        </table>
+  
+      </div>
+      <button type="submit">add item</button>
+    </form>
+
+  <script>
+    const electron = require('electron')
+    const {ipcRenderer} = electron
+    const form = document.querySelector('form');
+    form.addEventListener('submit', submitForm);
+
+    function submitForm(e) {
+      e.preventDefault();
+      const name = document.querySelector('#name').value;
+      const category = document.querySelector('#category').value;
+      const wineType = document.querySelector('#wineType').value;
+      const year = document.querySelector('#year').value;
+      const winery = document.querySelector('#winery').value;
+      const purchased = document.querySelector('#purchased').value;
+      const wineRating = document.querySelector('#wineRating').value;
+      ipcRenderer.send('item:add',name,category,wineType,year,winery,purchased,wineRating);//send to main.js
+    }
+  </script>
+  </body>
+</html>
